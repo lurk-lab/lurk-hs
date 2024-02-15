@@ -10,6 +10,10 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #cargo-cabal = {
+    #  url = "github:yvan-sraka/cargo-cabal";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = { self, nixpkgs, flake-utils, naersk, fenix }:
