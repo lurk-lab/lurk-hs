@@ -1,6 +1,5 @@
 # lurk-hs
-Haskell Wrappers for Lurk
-
+WIP Haskell Wrappers for Lurk
 
 # Build
 
@@ -8,5 +7,21 @@ Regenerate Haskell module with
 
 ```
 $ nix develop
-$ nix run github:yvan-sraka/cargo-cabal -- cabal init
+$ cargo build
+$ cabal build
+```
+
+Example in src/lib.hs
+
+```rust
+#[hs_bindgen]
+fn greetings(name: &str) {
+    println!("Hello, {name}!");
+}
+```
+
+generates in `src/LurkHs.hs`
+
+```haskell
+foreign import ccall safe "__c_greetings" greetings :: CString -> IO (())
 ```

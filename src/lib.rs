@@ -1,5 +1,11 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use hs_bindgen::*;
+
+/// Haskell type signatures are auto-magically inferred from Rust function
+/// types! This feature could slow down compilation, and be enabled with:
+/// `hs-bindgen = { ..., features = [ "full" ] }`
+#[hs_bindgen]
+fn greetings(name: &str) {
+    println!("Hello, {name}!");
 }
 
 #[cfg(test)]
